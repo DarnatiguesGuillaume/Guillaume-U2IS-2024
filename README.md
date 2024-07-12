@@ -3,7 +3,7 @@ This repository contains my work as an intern at the U2IS Research Lab at ENSTA 
 
 
 
-There are 4 folders that constitute the essential part of my internship:
+There are 4 folders that constitute the essential part of my internship's work:
 
   - EasySegment, a tool to extract masks from images manually using segment-anything from META to make the process easier, and faster.
                   Location on my computer, with segment anything and the docker installed : /home/guillaume-darnatigues/Documents/ros_noetic_Docker/segment_anything/
@@ -13,4 +13,4 @@ There are 4 folders that constitute the essential part of my internship:
   - LocalBinaryPatterns, tools to create ground-classification models, using Local Binary Patterns inputted into SVM, LogReg and KNN algorythms.
                   Location on my computer, with the datasets : /home/guillaume-darnatigues/Documents/code/groundClass_NEW/
 
-    My computer was the one labelled 190147 in room R220.
+My computer was the one labelled 190147 in room R220.
