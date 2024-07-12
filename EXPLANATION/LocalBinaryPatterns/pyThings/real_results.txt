@@ -1,0 +1,1829 @@
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 64 --sub_images_number 1 --method default
+
+Best model: logreg_max_iter_100.pkl
+Best accuracy: 0.5216377825073477
+
+Confusion Matrix:
+360 406 0 25 0 0
+3 1935 0 26 0 3
+108 1137 747 20 7 0
+26 743 0 716 273 166
+74 213 5 223 584 1
+4 842 0 272 143 805
+
+
+
+--resize_size 75 --radius 1 --n_points 8 --number_of_bins 64 --sub_images_number 1 --method default
+
+Best model: knn_neighbors_1.pkl
+Best accuracy: 0.3295834600182426
+
+Confusion Matrix:
+2 787 2 0 0 0
+0 1949 0 0 0 18
+357 1216 446 0 0 0
+0 1476 0 0 0 448
+0 836 0 0 0 264
+2 1209 0 0 0 855
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 128 --sub_images_number 1 --method default
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.5018749366575453
+
+Confusion Matrix:
+327 459 0 5 0 0
+8 1940 0 18 0 1
+24 1007 987 0 1 0
+50 967 0 504 262 141
+26 441 0 45 579 9
+1 1062 0 127 261 615
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.5971419884463363
+
+Confusion Matrix:
+495 73 18 141 56 8
+145 951 11 82 127 651
+261 17 1699 41 0 1
+124 100 0 585 541 574
+82 31 5 217 718 47
+37 122 0 58 405 1444
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.5918718962197224
+
+Confusion Matrix:
+562 50 10 82 77 10
+160 1083 3 66 189 466
+422 27 1464 52 44 10
+109 96 0 463 701 555
+62 28 4 120 853 33
+27 188 0 71 365 1415
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 50 --sub_images_number 1 --method ror
+
+Best model: knn_neighbors_8.pkl
+Best accuracy: 0.5944055944055944
+
+Confusion Matrix:
+597 54 13 46 46 35
+340 965 1 56 180 425
+523 71 1396 1 25 3
+178 90 0 796 385 475
+113 30 5 137 711 104
+122 165 0 156 223 1400
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 50 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.6068713894800851
+
+Confusion Matrix:
+535 53 13 98 83 9
+141 1100 15 71 199 441
+281 30 1570 67 68 3
+102 88 2 483 679 570
+53 22 4 125 868 28
+24 172 0 66 372 1432
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 3 --method ror
+
+Best model: svm_C_10_kernel_rbf.pkl
+Best accuracy: 0.5803182324921455
+
+Confusion Matrix:
+608 69 8 64 38 4
+271 919 1 61 264 451
+613 25 1377 4 0 0
+216 76 0 621 430 581
+120 32 5 236 639 68
+76 100 0 49 279 1562
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 3 --method uniform
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.6039322995844735
+
+Confusion Matrix:
+495 84 20 101 80 11
+134 1074 45 68 248 398
+191 45 1699 40 38 6
+106 112 2 503 646 555
+65 38 11 131 814 41
+35 212 2 82 361 1374
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 50 --sub_images_number 3 --method ror
+
+Best model: logreg_max_iter_100.pkl
+Best accuracy: 0.5544745109962501
+
+Confusion Matrix:
+488 97 6 104 88 8
+198 1091 3 64 212 399
+497 68 1363 73 17 1
+122 162 1 440 647 552
+93 54 4 173 735 41
+36 230 0 129 317 1354
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 50 --sub_images_number 3 --method uniform
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.5951150298976386
+
+Confusion Matrix:
+496 86 20 109 71 9
+167 1102 23 81 240 354
+272 63 1597 58 26 3
+113 119 3 509 647 533
+70 42 8 135 808 37
+35 205 0 85 381 1360
+
+
+
+--resize_size 50 --radius 3 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method uniform
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.5137326441674268
+
+Confusion Matrix:
+493 82 19 39 154 4
+84 1021 22 173 417 250
+699 311 776 144 59 30
+56 141 12 645 404 666
+207 54 12 161 631 35
+0 24 0 283 256 1503
+
+
+
+--resize_size 50 --radius 3 --n_points 12 --number_of_bins 36 --sub_images_number 1 --method uniform
+
+Best model: knn_neighbors_8.pkl
+Best accuracy: 0.63747846356542
+
+Confusion Matrix:
+604 84 3 32 55 13
+198 1340 0 63 198 168
+518 536 915 33 17 0
+69 44 3 933 189 686
+85 9 12 278 673 43
+0 12 0 44 185 1825
+
+
+
+--resize_size 50 --radius 3 --n_points 16 --number_of_bins 36 --sub_images_number 1 --method uniform
+
+Best model: knn_neighbors_8.pkl
+Best accuracy: 0.5339008817269687
+
+Confusion Matrix:
+574 62 1 72 68 14
+220 1077 0 103 304 263
+442 852 686 18 20 1
+58 159 0 509 539 659
+74 4 0 169 714 139
+2 65 0 44 247 1708
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method uniform
+
+Best model: knn_neighbors_8.pkl
+Best accuracy: 0.6089996959562177
+
+Confusion Matrix:
+563 76 7 17 109 19
+179 1116 0 45 287 340
+623 329 1001 28 36 2
+48 61 0 900 274 641
+54 26 9 160 756 95
+0 30 0 132 231 1673
+
+
+
+--resize_size 50 --radius 2 --n_points 12 --number_of_bins 36 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.5463666768014594
+
+Confusion Matrix:
+472 139 4 33 127 16
+86 1206 0 40 344 291
+386 655 934 44 0 0
+40 174 0 376 599 735
+57 36 0 59 810 138
+1 154 0 47 271 1593
+
+
+
+--resize_size 50 --radius 2 --n_points 16 --number_of_bins 36 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.5984595115029898
+
+Confusion Matrix:
+518 51 1 33 157 31
+99 1359 0 81 192 236
+301 595 1021 94 8 0
+38 142 0 305 778 661
+57 0 0 67 918 58
+2 8 0 30 242 1784
+
+
+
+--resize_size 50 --radius 3 --n_points 16 --number_of_bins 36 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.5369413195500152
+
+Confusion Matrix:
+577 44 0 67 98 5
+124 1183 0 57 331 272
+447 551 879 124 17 1
+70 200 0 205 840 609
+141 0 0 142 769 48
+0 19 0 34 328 1685
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 3 --method uniform
+
+Best model: svm_C_10_kernel_rbf.pkl
+Best accuracy: 0.5683591770548292
+
+Confusion Matrix:
+531 100 7 29 119 5
+107 1131 0 126 311 292
+610 276 1010 52 70 1
+29 99 1 419 661 715
+56 18 4 196 779 47
+2 23 0 74 229 1738
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 3 --method default
+
+Best model: svm_C_1.0_kernel_rbf.pkl
+Best accuracy: 0.567649741562785
+
+Confusion Matrix:
+274 456 0 32 29 0
+10 1762 0 22 7 166
+356 947 587 25 104 0
+20 235 1 663 355 650
+95 8 2 324 657 14
+7 117 0 146 138 1658
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 64 --sub_images_number 3 --method default
+
+Best model: svm_C_1.0_kernel_poly.pkl
+Best accuracy: 0.659369615891355
+
+Confusion Matrix:
+514 276 0 1 0 0
+29 1880 0 27 2 29
+398 621 1000 0 0 0
+29 321 1 709 330 534
+86 5 4 278 701 26
+9 70 0 144 141 1702
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 64 --sub_images_number 1 --method ror
+
+Best model: svm_C_5_kernel_poly.pkl
+Best accuracy: 0.43356212601196764
+
+Confusion Matrix:
+429 1327 170 275 3 84
+314 1344 171 0 0 138
+398 389 1158 0 24 50
+38 139 40 329 13 1365
+208 260 16 0 194 422
+339 183 8 50 13 1473
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 64 --sub_images_number 1 --method default
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.6239000351988736
+
+Confusion Matrix:
+2105 159 22 2 0 0
+359 1591 0 12 0 5
+855 221 943 0 0 0
+445 232 0 775 197 275
+362 28 0 62 638 10
+250 328 0 153 297 1038
+
+
+
+--resize_size 50 --radius 2 --n_points 12 --number_of_bins 64 --sub_images_number 1 --method default
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.5399507215769095
+
+Confusion Matrix:
+2008 267 6 7 0 0
+432 1519 0 15 0 1
+1281 110 628 0 0 0
+518 397 0 595 213 201
+410 53 0 139 494 4
+276 423 0 293 182 892
+
+
+
+--resize_size 50 --radius 2 --n_points 16 --number_of_bins 64 --sub_images_number 1 --method default
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.5799014431538191
+
+Confusion Matrix:
+1865 401 16 5 0 1
+347 1595 0 18 0 7
+464 543 1012 0 0 0
+495 302 0 595 260 272
+345 73 1 129 530 22
+236 394 0 349 94 993
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 64 --sub_images_number 1 --method default
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.611316437873988
+
+Confusion Matrix:
+2077 190 20 1 0 0
+338 1603 0 20 0 6
+737 361 920 0 1 0
+469 225 0 743 190 297
+399 86 0 40 570 5
+220 411 0 143 258 1034
+
+
+
+--resize_size 50 --radius 2 --n_points 12 --number_of_bins 64 --sub_images_number 1 --method default
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.5759415698697642
+
+Confusion Matrix:
+1959 309 19 1 0 0
+334 1631 0 2 0 0
+839 171 1009 0 0 0
+657 359 0 542 157 209
+427 128 2 58 480 5
+245 510 0 196 191 924
+
+
+
+--resize_size 50 --radius 2 --n_points 16 --number_of_bins 64 --sub_images_number 1 --method default
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.5998768039422738
+
+Confusion Matrix:
+1807 461 12 5 0 3
+224 1731 0 11 0 1
+393 519 1107 0 0 0
+500 302 0 673 194 255
+365 155 0 48 520 12
+183 545 0 206 153 979
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.6952657514959522
+
+Confusion Matrix:
+1682 225 52 52 198 79
+222 997 1 128 48 571
+186 58 1693 79 2 1
+43 80 0 701 416 684
+42 3 2 38 999 16
+6 18 0 68 145 1829
+
+
+
+--resize_size 50 --radius 2 --n_points 12 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.6517951425554382
+
+Confusion Matrix:
+1607 244 59 91 215 72
+158 832 0 99 189 689
+287 8 1630 91 1 2
+45 44 0 630 461 744
+66 24 3 82 883 42
+0 13 0 72 156 1825
+
+
+
+--resize_size 50 --radius 2 --n_points 16 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.6631467793030623
+
+Confusion Matrix:
+1581 194 47 95 245 126
+201 931 0 121 112 602
+129 52 1656 181 0 1
+43 88 0 618 424 751
+93 10 4 41 919 33
+9 54 0 47 125 1831
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 3 --method ror
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.6499472016895459
+
+Confusion Matrix:
+1693 305 43 34 144 69
+227 1062 0 91 124 463
+661 50 1261 46 1 0
+46 116 0 653 425 684
+76 5 5 58 933 23
+30 52 0 61 139 1784
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 3 --method ror
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.6935938049982401
+
+Confusion Matrix:
+1715 216 58 37 206 56
+333 983 1 106 72 472
+128 70 1736 82 1 2
+103 99 0 698 377 647
+109 4 2 38 935 12
+9 18 0 75 149 1815
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.6979936642027456
+
+Confusion Matrix:
+1685 224 77 51 200 51
+304 1048 1 99 49 466
+125 60 1764 68 1 1
+100 94 0 650 409 671
+99 5 2 35 939 20
+9 14 0 61 136 1846
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.6744984160506864
+
+Confusion Matrix:
+1805 191 57 64 117 54
+371 1006 2 65 110 413
+229 42 1633 91 2 22
+115 40 0 423 619 727
+91 7 8 46 911 37
+2 5 0 30 142 1887
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.682242168250616
+
+Confusion Matrix:
+1860 159 63 56 103 47
+436 1001 1 70 113 346
+235 45 1643 80 3 13
+110 35 1 442 589 747
+81 4 7 59 909 40
+0 5 0 37 126 1898
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.6813621964097148
+
+Confusion Matrix:
+1836 151 64 62 114 61
+403 963 5 64 118 414
+193 34 1686 82 3 21
+105 38 0 430 612 739
+74 6 8 49 923 40
+0 4 0 31 126 1905
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.6769623372052095
+
+Confusion Matrix:
+1772 169 68 73 128 78
+277 926 6 79 103 576
+206 35 1655 98 4 21
+59 28 0 470 607 760
+15 4 8 42 982 49
+0 2 0 34 142 1888
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.6720381068207155
+
+Confusion Matrix:
+499 68 14 52 141 17
+37 1107 11 80 114 618
+29 136 1690 122 22 20
+46 52 1 497 577 751
+33 2 4 59 960 42
+0 4 0 43 141 1878
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 256 --sub_images_number 1 --method default
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 32 --sub_images_number 1 --method default
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.6264519535374868
+
+Confusion Matrix:
+1962 316 9 1 0 0
+400 1552 0 11 0 4
+597 203 1219 0 0 0
+432 271 0 596 273 352
+419 7 0 178 474 22
+308 103 0 200 139 1316
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.6970256951777543
+
+Confusion Matrix:
+1660 237 67 45 185 94
+211 976 2 122 38 618
+144 51 1751 71 1 1
+42 70 0 705 402 705
+44 4 2 42 988 20
+5 16 0 74 130 1841
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.6958817317845829
+
+Confusion Matrix:
+1659 248 57 46 201 77
+216 991 0 110 50 600
+151 65 1724 76 2 1
+44 74 0 721 401 684
+49 6 0 42 985 18
+6 11 0 78 143 1828
+
+
+
+--resize_size 150 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.48416050686378037
+
+Confusion Matrix:
+1877 66 193 77 0 75
+646 901 102 9 0 309
+588 93 1314 0 24 0
+3 33 14 277 0 1597
+57 430 0 0 589 24
+234 832 6 20 430 544
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.6909538894755368
+
+Confusion Matrix:
+1674 229 52 49 199 85
+234 955 2 122 50 604
+165 55 1735 62 1 1
+42 77 0 696 431 678
+55 2 2 41 985 15
+5 18 0 73 163 1807
+
+
+
+--resize_size 20 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.5
+
+Confusion Matrix:
+1046 410 108 193 449 82
+194 981 16 365 167 244
+215 384 1147 208 52 13
+113 152 2 515 618 524
+270 29 11 138 629 23
+20 95 1 332 254 1364
+
+
+
+--resize_size 30 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.6121084125307991
+
+Confusion Matrix:
+1385 336 68 64 379 56
+244 1103 0 255 167 198
+231 352 1299 107 29 1
+54 81 0 644 455 690
+118 9 0 116 841 16
+5 20 0 204 153 1684
+
+
+
+--resize_size 40 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.6417634635691658
+
+Confusion Matrix:
+1459 298 33 116 318 64
+236 1042 0 263 143 283
+201 133 1537 135 13 0
+33 73 0 595 527 696
+28 1 0 80 969 22
+2 7 0 164 202 1691
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.6958817317845829
+
+Confusion Matrix:
+1680 240 49 49 174 96
+218 996 1 114 41 597
+166 67 1708 75 1 2
+47 83 0 703 416 675
+54 6 2 39 986 13
+6 18 0 60 147 1835
+
+
+
+--resize_size 60 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.6126363956353397
+
+Confusion Matrix:
+1441 156 22 41 470 158
+108 633 0 46 101 1079
+358 81 1378 61 96 45
+25 24 0 696 300 879
+4 0 0 19 1070 7
+0 5 0 52 265 1744
+
+
+
+--resize_size 70 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_100.pkl
+Best accuracy: 0.5858852516719465
+
+Confusion Matrix:
+1316 66 51 17 587 251
+91 633 0 11 94 1138
+573 34 1184 43 76 109
+3 10 0 778 158 975
+3 5 0 49 1039 4
+1 7 0 34 316 1708
+
+
+
+--resize_size 80 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_100.pkl
+Best accuracy: 0.5564941921858501
+
+Confusion Matrix:
+1502 25 47 4 385 325
+89 591 0 0 56 1231
+608 33 1036 34 135 173
+7 0 0 559 151 1207
+2 6 0 18 1046 28
+3 29 0 2 442 1590
+
+
+
+--resize_size 90 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_100.pkl
+Best accuracy: 0.5757655755015839
+
+Confusion Matrix:
+1732 15 55 1 36 449
+112 539 5 1 3 1307
+610 58 1124 2 52 173
+8 0 0 516 15 1385
+86 5 0 30 712 267
+1 23 0 5 117 1920
+
+
+
+--resize_size 45 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.6331397395283351
+
+Confusion Matrix:
+1422 216 36 132 377 105
+237 877 0 206 152 495
+254 113 1502 130 20 0
+26 73 0 692 471 662
+31 0 0 69 982 18
+3 11 0 135 197 1720
+
+
+
+--resize_size 55 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.6303238296374516
+
+Confusion Matrix:
+1438 160 27 65 465 133
+131 729 0 88 110 909
+270 77 1451 124 67 30
+25 36 0 711 361 791
+10 1 0 24 1057 8
+1 4 0 79 205 1777
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: knn_neighbors_1.pkl
+Best accuracy: 0.4059961600945208
+
+Confusion Matrix:
+438 91 120 9 0 742
+147 474 9 80 0 392
+24 80 1136 2 0 0
+185 15 9 97 0 321
+54 0 3 0 0 1121
+597 0 20 0 1 604
+
+Best model: knn_neighbors_1.pkl
+Best accuracy: 0.4059961600945208
+
+Confusion Matrix:
+438 91 120 9 0 742
+147 474 9 80 0 392
+24 80 1136 2 0 0
+185 15 9 97 0 321
+54 0 3 0 0 1121
+597 0 20 0 1 604
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.4737646459500764
+
+Confusion Matrix:
+214 43 68 1 1 387
+169 43 74 0 0 400
+98 3 587 0 0 1
+0 43 0 271 0 86
+0 0 0 0 0 674
+0 7 0 9 2 745
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.48522669383596534
+
+Confusion Matrix:
+279 92 68 1 0 274
+173 66 78 0 0 369
+91 6 591 0 0 1
+0 77 0 291 0 32
+0 0 0 0 0 674
+0 29 0 55 1 678
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.47274579724910853
+
+Confusion Matrix:
+213 73 66 1 0 361
+164 50 77 0 0 395
+102 6 580 0 0 1
+0 57 0 271 0 72
+0 0 0 0 0 674
+0 8 0 12 1 742
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_10_kernel_rbf.pkl
+Best accuracy: 0.585533262935586
+
+Confusion Matrix:
+1508 302 61 340 20 57
+131 1119 0 309 143 265
+917 176 795 74 57 0
+81 1 0 833 167 18
+25 107 0 435 635 722
+10 19 0 205 68 1764
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_1.0_kernel_poly.pkl
+Best accuracy: 0.35964449137627597
+
+Confusion Matrix:
+125 8 370 0 251 1534
+116 405 371 0 0 1075
+185 152 1404 0 5 273
+171 2 52 189 0 686
+37 0 74 0 262 1551
+248 0 74 4 38 1702
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.4745287824758023
+
+Confusion Matrix:
+223 60 67 1 0 363
+174 40 77 0 0 395
+101 3 584 0 0 1
+0 50 0 273 0 77
+0 0 0 0 0 674
+0 8 0 10 2 743
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.4882832399388691
+
+Confusion Matrix:
+258 79 69 1 1 306
+174 51 71 0 0 390
+92 7 590 0 0 0
+1 54 0 295 0 50
+0 0 0 0 0 674
+0 13 0 25 2 723
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: knn_neighbors_1.pkl
+Best accuracy: 0.4362723379116822
+
+Confusion Matrix:
+444 97 157 10 0 692
+221 476 12 19 0 374
+27 58 1156 0 0 1
+148 16 9 92 0 362
+54 0 5 0 0 1119
+415 0 20 0 1 786
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: knn_neighbors_1.pkl
+Best accuracy: 0.4017131885984345
+
+Confusion Matrix:
+828 100 195 6 0 271
+365 483 17 61 0 176
+24 63 1153 1 0 1
+176 17 9 97 0 328
+544 0 10 0 0 624
+1042 0 21 0 0 159
+
+Best model: svm_C_5_kernel_rbf.pkl
+Best accuracy: 0.3984640378083001
+
+Confusion Matrix:
+1303 29 66 2 0 0
+768 209 26 99 0 0
+30 27 1183 2 0 0
+607 14 3 3 0 0
+1083 0 95 0 0 0
+1174 0 37 0 11 0
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.48981151299032094
+
+Confusion Matrix:
+274 54 72 0 1 313
+167 38 90 0 0 391
+90 3 596 0 0 0
+4 57 0 280 0 59
+0 0 0 0 0 674
+0 12 0 15 1 735
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_1.0_kernel_poly.pkl
+Best accuracy: 0.36061246040126715
+
+Confusion Matrix:
+119 7 379 0 235 1548
+92 424 379 0 0 1072
+159 163 1421 0 3 273
+173 4 51 172 0 700
+38 0 85 0 249 1552
+244 0 75 3 31 1713
+
+Best model: logreg_max_iter_100.pkl
+Best accuracy: 0.5154334662531384
+
+Confusion Matrix:
+700 0 21 366 254 59
+73 0 40 476 493 20
+43 0 1194 4 1 0
+0 0 4 430 178 15
+11 0 0 1 1166 0
+18 0 7 12 1185 0
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_1.0_kernel_poly.pkl
+Best accuracy: 0.3590285110876452
+
+Confusion Matrix:
+127 8 382 0 241 1530
+119 422 373 0 0 1053
+197 160 1403 0 5 254
+172 6 52 182 0 688
+34 0 90 0 249 1551
+256 0 74 3 36 1697
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_1.0_kernel_poly.pkl
+Best accuracy: 0.3593804998240056
+
+Confusion Matrix:
+119 4 381 0 245 1539
+93 435 374 0 1 1064
+177 166 1397 0 5 274
+177 6 47 182 0 688
+36 0 88 0 249 1551
+249 0 74 3 38 1702
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_1.0_kernel_poly.pkl
+Best accuracy: 0.3591165082717353
+
+Confusion Matrix:
+122 8 389 0 236 1533
+107 418 384 0 0 1058
+178 149 1425 0 5 262
+165 4 58 180 0 693
+30 0 105 0 238 1551
+254 0 77 3 34 1698
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_1.0_kernel_poly.pkl
+Best accuracy: 0.36149243224216826
+
+Confusion Matrix:
+121 8 383 0 240 1536
+101 439 376 0 0 1051
+194 159 1409 0 4 253
+164 5 60 183 0 688
+32 0 85 0 256 1551
+256 0 75 3 32 1700
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_1.0_kernel_poly.pkl
+Best accuracy: 0.35735656458993315
+
+Confusion Matrix:
+0 18 430 0 235 1549 56
+0 478 378 0 0 1077 34
+0 212 1440 0 3 295 69
+0 7 57 183 0 688 165
+0 0 127 0 245 1552 0
+0 0 76 4 31 1715 240
+0 0 0 0 0 0 0
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_1.0_kernel_poly.pkl
+Best accuracy: 0.3646603308694122
+
+Confusion Matrix:
+502 377 0 0 1062 26
+231 1438 0 4 280 66
+7 48 180 0 690 175
+0 114 0 259 1551 0
+0 76 3 34 1710 243
+18 427 0 239 1549 55
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_1.0_kernel_poly.pkl
+Best accuracy: 0.36342837029215064
+
+Confusion Matrix:
+135 8 371 234 0 1540
+89 446 373 0 0 1059
+180 160 1413 4 0 262
+40 0 73 260 0 1551
+165 5 59 0 173 698
+259 0 75 26 3 1703
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.3659802886307638
+
+Confusion Matrix:
+393 117 326 210 1 1241
+398 223 380 68 0 898
+434 117 1407 3 0 58
+30 0 108 235 0 1551
+209 150 23 0 326 392
+328 52 54 25 32 1575
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_1.0_kernel_poly.pkl
+Best accuracy: 0.36158042942625834
+
+Confusion Matrix:
+120 8 381 234 0 1545
+103 431 375 0 0 1058
+172 166 1415 4 0 262
+36 0 87 250 0 1551
+169 4 55 0 179 693
+246 0 75 28 3 1714
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_1.0_kernel_poly.pkl
+Best accuracy: 0.36457233368532205
+
+Confusion Matrix:
+129 8 371 250 0 1530
+100 430 378 1 0 1058
+186 152 1412 5 0 264
+36 0 74 263 0 1551
+175 3 48 0 218 656
+255 1 74 37 8 1691
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_1.0_kernel_poly.pkl
+Best accuracy: 0.3629883843717001
+
+Confusion Matrix:
+128 16 384 243 0 1517
+92 439 385 1 0 1050
+182 161 1426 4 0 246
+34 0 92 247 0 1551
+169 6 54 0 189 682
+253 0 76 37 4 1696
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 64 --sub_images_number 1 --method ror
+
+Best model: svm_C_5_kernel_poly.pkl
+Best accuracy: 0.4311862020415347
+
+Confusion Matrix:
+399 1344 164 260 0 121
+251 1324 163 0 0 229
+377 427 1147 0 17 51
+41 123 41 295 7 1417
+210 181 14 0 184 511
+322 115 8 63 7 1551
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 64 --sub_images_number 1 --method ror
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.4334741288278775
+
+Confusion Matrix:
+620 1144 130 293 7 94
+509 1094 137 0 0 227
+541 281 1132 0 33 32
+43 73 39 379 21 1369
+220 161 10 0 216 493
+377 115 8 52 29 1485
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 64 --sub_images_number 1 --method ror
+
+Best model: svm_C_5_kernel_poly.pkl
+Best accuracy: 0.42925026399155225
+
+Confusion Matrix:
+442 1347 141 262 3 93
+324 1323 146 0 0 174
+441 394 1102 0 26 56
+40 149 39 302 10 1384
+210 211 14 0 197 468
+337 144 8 53 12 1512
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 64 --sub_images_number 1 --method ror
+
+Best model: svm_C_5_kernel_poly.pkl
+Best accuracy: 0.43101020767335446
+
+Confusion Matrix:
+397 1383 175 268 6 59
+279 1453 155 0 0 80
+374 454 1118 0 28 45
+47 199 36 301 24 1317
+211 311 13 0 216 349
+322 225 8 74 24 1413
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_10_kernel_rbf.pkl
+Best accuracy: 0.5863252375923971
+
+Confusion Matrix:
+1497 316 58 21 341 55
+116 1159 0 142 288 262
+932 178 799 55 54 1
+25 99 0 623 441 736
+80 1 0 175 826 18
+5 26 0 80 196 1759
+
+Best model: svm_C_10_kernel_rbf.pkl
+Best accuracy: 0.5868532206969377
+
+Confusion Matrix:
+1516 312 61 17 320 62
+121 1128 0 144 295 279
+925 161 800 67 66 0
+28 104 0 633 431 728
+89 1 0 166 824 20
+12 22 0 101 163 1768
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: knn_neighbors_1.pkl
+Best accuracy: 0.15792154865002547
+
+Confusion Matrix:
+181 227 0 39 148 91
+354 55 219 19 38 4
+22 7 0 112 237 22
+27 13 1 311 126 196
+0 7 0 169 46 541
+481 70 7 14 115 27
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 18 --sub_images_number 5 --method ror
+
+Best model: svm_C_10_kernel_rbf.pkl
+Best accuracy: 0.5695177754311862
+
+Confusion Matrix:
+1476 308 58 38 342 66
+204 1099 0 180 239 245
+868 181 804 72 94 0
+42 131 0 708 392 651
+116 2 1 207 737 37
+24 27 0 192 175 1648
+
+
+
+--resize_size 64 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 4 --method ror
+
+Best model: logreg_max_iter_100.pkl
+Best accuracy: 0.4977120732136572
+
+Confusion Matrix:
+1061 216 47 396 236 332
+67 662 0 21 72 1145
+510 78 1167 180 16 68
+38 43 0 680 471 692
+27 67 0 197 646 163
+13 154 0 28 431 1440
+
+
+
+--resize_size 64 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: logreg_max_iter_100.pkl
+Best accuracy: 0.5080077437521999
+
+Confusion Matrix:
+1094 121 44 412 234 383
+35 618 0 28 47 1239
+531 41 1173 204 12 58
+40 16 0 670 491 707
+13 31 0 200 723 133
+9 62 0 32 468 1495
+
+
+
+--resize_size 64 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 4 --method ror
+
+Best model: svm_C_10_kernel_rbf.pkl
+Best accuracy: 0.39334741288278774
+
+Confusion Matrix:
+791 148 8 820 271 250
+44 183 0 157 432 1151
+799 56 652 481 16 15
+7 14 0 586 410 907
+24 34 0 80 576 386
+12 19 0 6 347 1682
+
+
+
+--resize_size 64 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 4 --method uniform
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.47043294614572334
+
+Confusion Matrix:
+1236 301 27 160 322 242
+219 690 0 8 379 671
+718 141 653 19 307 181
+78 13 0 421 721 691
+1 62 0 27 968 42
+29 157 0 38 464 1378
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.5841253079901443
+
+Confusion Matrix:
+1517 309 55 23 325 59
+133 1122 0 155 298 259
+900 182 788 56 92 1
+26 107 0 646 431 714
+85 1 0 180 814 20
+11 21 0 112 171 1751
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_5_kernel_rbf.pkl
+Best accuracy: 0.5792854628651883
+
+Confusion Matrix:
+1432 343 61 20 363 69
+97 1130 0 133 300 307
+946 167 771 57 77 1
+27 87 0 667 388 755
+79 0 0 196 806 19
+9 26 0 80 174 1777
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_5_kernel_rbf.pkl
+Best accuracy: 0.6149502554450121
+
+Confusion Matrix:
+1189 185 53 3 136 8
+95 778 0 47 272 89
+609 89 608 17 7 0
+18 79 0 406 306 441
+70 0 0 96 532 2
+8 24 0 57 153 1061
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: svm_C_5_kernel_rbf.pkl
+Best accuracy: 0.6099757999462221
+
+Confusion Matrix:
+1172 202 53 4 135 8
+85 788 0 46 278 84
+609 98 600 14 9 0
+17 85 0 407 307 434
+71 0 0 96 531 2
+7 23 0 62 172 1039
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+Best model: knn_neighbors_8.pkl
+Best accuracy: 0.5820410574508935
+
+Confusion Matrix:
+891 174 246 53 27 9
+336 476 47 207 5 31
+58 3 1181 0 0 0
+3 126 0 616 240 193
+54 169 12 168 115 109
+16 123 1 413 7 662
+
+
+
+--resize_size 50 --radius 2 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: knn_neighbors_8.pkl
+Best accuracy: 0.6665189779943879
+
+Confusion Matrix:
+1097 102 128 68 5 0
+366 506 93 100 3 34
+80 0 1162 0 0 0
+19 56 2 935 125 41
+10 114 9 151 196 147
+24 131 0 438 12 617
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.6964997784669916
+
+Confusion Matrix:
+1049 147 84 67 33 20
+266 507 13 73 19 224
+50 25 1136 15 16 0
+84 15 11 958 68 42
+6 29 7 96 367 122
+24 191 5 270 33 699
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_100.pkl
+Best accuracy: 0.46019790282085365
+
+Confusion Matrix:
+895 0 291 1 197 16
+329 0 549 130 90 4
+1 0 1241 0 0 0
+524 0 125 521 8 0
+86 0 2 77 442 20
+28 0 227 936 14 17
+
+
+
+--resize_size 16 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: svm_C_5_kernel_poly.pkl
+Best accuracy: 0.4559149313247674
+
+Confusion Matrix:
+595 268 108 30 233 166
+168 449 60 45 52 328
+363 71 754 3 41 10
+42 129 28 311 265 403
+56 35 26 152 233 125
+43 161 27 131 115 745
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 3 --method uniform
+
+Best model: logreg_max_iter_100.pkl
+Best accuracy: 0.4591640821149018
+
+Confusion Matrix:
+848 0 260 22 250 20
+275 0 407 217 196 7
+3 0 1236 0 3 0
+367 0 201 591 19 0
+56 0 1 119 425 26
+13 0 265 922 13 9
+
+
+
+--resize_size 64 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.5733274257864421
+
+Confusion Matrix:
+1136 50 212 1 0 1
+565 333 132 17 35 20
+1 1 1240 0 0 0
+681 0 8 483 6 0
+69 45 12 97 326 78
+243 215 15 360 25 364
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.6877861468025402
+
+Confusion Matrix:
+1041 164 81 62 36 16
+295 496 4 69 22 216
+58 23 1130 30 1 0
+114 20 9 923 71 41
+4 29 10 83 380 121
+22 218 5 258 32 687
+
+
+
+
+
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+===========================================================================================================================================================
+Using color proportion from now on
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform WITH COLOR PROP
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.7100871363166446
+
+Confusion Matrix:
+1044 102 76 72 59 47
+257 624 58 11 15 137
+138 8 1084 0 0 12
+65 4 0 913 131 65
+5 3 4 171 358 86
+22 54 3 308 50 785
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.7040319007532122
+
+Confusion Matrix:
+1048 84 83 66 56 63
+292 683 3 8 14 102
+100 23 1083 0 0 36
+171 2 0 833 120 52
+7 2 6 163 347 102
+24 31 5 329 60 773
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.7182100132919805
+
+Confusion Matrix:
+1138 47 94 58 29 34
+283 780 4 6 2 27
+130 5 1101 0 0 6
+175 0 7 837 137 22
+12 0 9 165 382 59
+69 11 5 450 62 625
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: svm_C_10_kernel_rbf.pkl
+Best accuracy: 0.44188450745827795
+
+Confusion Matrix:
+262 296 42 41 368 391
+51 861 1 0 161 28
+157 114 289 264 291 127
+5 3 32 584 29 525
+17 15 36 22 526 11
+81 505 45 25 96 470
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: knn_neighbors_1.pkl
+Best accuracy: 0.6867523260965884
+
+Confusion Matrix:
+1193 105 18 73 5 6
+110 930 17 9 25 11
+78 1 1163 0 0 0
+137 357 1 680 0 3
+21 5 0 54 303 244
+325 52 0 457 7 381
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: knn_neighbors_8.pkl
+Best accuracy: 0.6932506276768572
+
+Confusion Matrix:
+1197 70 89 32 7 5
+326 578 68 43 19 68
+26 1 1215 0 0 0
+176 27 0 855 70 50
+16 93 16 64 321 117
+197 173 7 246 71 528
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.6171242520239353
+
+Confusion Matrix:
+1701 156 64 162 83 122
+178 1172 6 79 197 335
+562 12 1325 80 30 10
+135 16 0 489 699 585
+64 7 5 126 869 29
+68 77 0 80 384 1457
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: svm_C_10_kernel_poly.pkl
+Best accuracy: 0.6260119676170363
+
+Confusion Matrix:
+1861 150 26 75 29 147
+509 1085 0 135 55 183
+282 38 1687 12 0 0
+182 58 0 481 542 661
+9 6 0 0 1083 2
+20 12 0 3 1114 917
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: knn_neighbors_8.pkl
+Best accuracy: 0.6885245901639344
+
+Confusion Matrix:
+1204 72 87 21 8 8
+368 565 53 38 19 59
+33 1 1208 0 0 0
+184 26 1 847 78 42
+21 101 18 62 306 119
+197 182 7 244 60 532
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.69797666518978
+
+Confusion Matrix:
+1125 89 94 69 16 7
+298 758 5 33 2 6
+195 20 1024 0 0 3
+72 4 21 1012 59 10
+8 1 9 203 347 59
+48 128 4 551 31 460
+
+
+
+
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+===========================================================================================================================================================
+Using others experimental techniques, like radial histograms and hog features |||||||||||||||||||||| This takes way longer though.
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+============================================================================================================================================================
+
+
+
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.7310589277802393
+
+Confusion Matrix:
+1173 61 56 85 10 15
+250 821 7 15 2 7
+129 1 1105 0 0 7
+116 1 1 1015 37 8
+14 1 6 191 375 40
+64 37 5 603 52 461
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.7362280313099985
+
+Confusion Matrix:
+1172 57 57 90 10 14
+203 882 7 7 1 2
+137 1 1098 0 0 6
+113 0 5 1026 28 6
+12 0 4 217 357 37
+58 20 5 656 33 450
+
+
+
+--resize_size 150 --radius 1 --n_points 8 --number_of_bins 36 --sub_images_number 1 --method ror
+
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.7453847289912864
+
+Confusion Matrix:
+1081 71 100 63 50 35
+272 769 10 8 7 36
+142 16 1080 0 0 4
+102 1 3 962 74 36
+3 3 7 111 461 42
+48 39 5 335 101 694
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_1000.pkl
+Best accuracy: 0.7490769457982572
+
+Confusion Matrix:
+1058 77 106 99 42 18
+210 841 19 11 6 15
+100 1 1137 0 0 4
+76 1 9 1032 48 12
+1 2 4 119 456 45
+33 48 5 524 64 548
+
+Best model: logreg_max_iter_10000.pkl
+Best accuracy: 0.7545414266725742
+
+Confusion Matrix:
+1089 67 67 131 30 16
+196 856 21 14 3 12
+90 1 1141 0 0 10
+30 0 2 1121 18 7
+1 3 2 151 435 35
+32 46 5 625 47 467
+
+
+
+--resize_size 50 --radius 1 --n_points 8 --number_of_bins 10 --sub_images_number 1 --method uniform
+
+Best model: logreg_max_iter_100000.pkl
+Best accuracy: 0.7570521341013144
+
+Confusion Matrix:
+897 52 98 164 146 43
+142 851 22 7 27 53
+114 5 1119 0 0 4
+38 0 2 997 117 24
+0 0 1 50 537 39
+13 8 4 342 130 725

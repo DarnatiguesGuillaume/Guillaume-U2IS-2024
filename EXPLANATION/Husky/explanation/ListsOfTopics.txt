@@ -1,0 +1,21 @@
+Those are the topics recorded with paquerette as of july 2024:
+
+/tf \
+ /zed2/zed_node/rgb/image_rect_color \
+ /zed2/zed_node/rgb/camera_info \
+ /zed2/zed_node/depth/depth_registered \
+ /zed2/zed_node/depth/depth_registered/camera_info \
+ /zed2/zed_node/imu/data \
+ /zed2/zed_node/imu/mag \
+ /zed2/zed_node/odom  \
+ /zed2/zed_node/pose  \
+ /imu/data \
+ /imu/nav_sat_fix \
+ /state_of_charge \
+ /odometry/filtered/ \
+ /odometry/filtered/local \
+ /joy_teleop/cmd_vel \
+ /joy_teleop/joy \
+ /joy_teleop/joy/set_feedback
+ /husky_velocity_controller/odom \
+ /husky_velocity_controller/cmd_vel \

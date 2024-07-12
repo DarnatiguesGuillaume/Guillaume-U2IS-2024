@@ -1,0 +1,61 @@
+Those three programs are Image transformation tools, pretty basic and strait forward but i will still comment about some important stuff.
+
+    - extract_images_from_bags_folder.py
+            this program permits you to extract every images from rosbags, just edit the topic that the images are taken from to fit your camera,
+            pass the folder in which your bags are and the directory you want the images saved in.
+
+    - depth_from_bag.py 
+            this program permits you to extract every depth images from rosbags, just edit the topic that the depth images are taken from to fit your camera,
+            pass the folder in which your bags are and the directory you want the images saved in.
+
+    - calculate_normals.py
+            this is the most interesting of the three programs. It takes depth images and computes the normals of the image from that.
+            For every image, you will get an image of the normalized normals, in all three directions.
+
+            There are three options you can change: 
+                --bag_dir           which is the folder in which the bags are stored
+                --save_to           which is the folder in which you wish to save the normals
+                --sub_fold          facultative, with it on, the program will look inside the subfolders of the specified folder for bags, and then
+                                        save the normals following the same architecture that the inputs were in.
+                                        You can see using this option as looking at a depth of 1, while not using it will look at a depth of 0.
+                                        To use this option, simply use --sub_fold, to not use it, don't write anything.
+    
+
+A couple information about how the normals are calculated:
+
+    We compute the gradient of the image using numpy.
+
+        dz_dv, dz_du = np.gradient(image)
+
+    Then we compute normal components.
+
+        Nx = - dz_du / np.sqrt(1 + dz_du**2 + dz_dv**2)
+        Ny = - dz_dv / np.sqrt(1 + dz_du**2 + dz_dv**2)
+        Nz = 1 / np.sqrt(1 + dz_du**2 + dz_dv**2)
+
+    We then normalize and take the absolute value, blending left with right, top with bottom, as we did not judge interesting or 
+    find any good ways of differentiating left from right and top from bottom. The only thing worth differentiating would be towards us
+    and away from us, but sadly, in reality, a camera can't capture any points "looking away" from it.
+
+        def scale(vec):
+            return  abs(vec)*255             # old formula, used during testing but not anymore, that didn't use the absolute value: (((aaa + 1) / 2) * 255)
+        scaled_Nx = scale(Nx)                       # this formula differentiated left from right and top from bottom
+        scaled_Ny = scale(Ny)
+        scaled_Nz = np.where(image!=0,Nz*255,0) 
+
+    You should see in     np.where(image!=0,Nz*255,0)     that 0 is a special value:
+    when the depth is set to 0, it means we couldn't find the actual depth of the point, because it is too far. Because of that, we
+    do not want the normals to be calculated on those 0 surfaces, doing so would for example make the sky look like a giant obstacle. So we insist on
+    putting the Z-normal to 0 when the depth is 0.
+
+    Another, more visual way of calculating normal images is with this formula Nz_temp = np.where(image<128,2*Nz*image,Nz*255) which adds contrast 
+    to the regions of low depth, which means places next to the camera. It also deals with the 0 problem because depth_image=0 means
+    depth_image < 128 and value of 2*Nz*0 = 0. 
+    The way the contrast is increased in low depth is by actually reducing the contrast in high depth, multipling a low depth value by two by Nz
+    acts like multipling it by less and less than 255 the further we get from the camera.
+
+    We then concatenate them like that
+    
+        res = np.dstack((scaled_Nx, scaled_Ny, scaled_Nz))
+
+    But don't forget cv2 uses BGR, not RGB. That means left and right normals are blue, top and bottom normals are green, and towards the camera is red.

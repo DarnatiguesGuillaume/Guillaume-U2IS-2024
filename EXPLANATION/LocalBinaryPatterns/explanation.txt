@@ -1,0 +1,304 @@
+This is my work on ground type identification using Local Binary Patterns (LBP) and then Supervised machine learning techniques.
+Those Supervised models are SVM, Logistic Regression (LogReg) and KNN.
+
+The goal of this work is to provide a baseline to compare to the main pipeline of Navigating-the-unknown.
+
+We start with patches and their corresponding labels, which we use to create models. We then test the models on another set of labelled patches to evaluate
+their true efficiency. Then we store this data along with the parameters used for by the LBP in a .txt file. 
+
+What will be referred to as a "test" in the future is the process of creating the data from two datasets with particular LBP arguments, creating the models 
+using one of the dataset, testing the data on another dataset, write the performances, in terms of efficiency, of the best models for those LBPs.
+
+The totality of files can be found on this computer, on my session, in /home/guillaume-darnatigues/Documents/code/groundClass_NEW/
+I did not copy everyfile here because the datasets are pretty heavy.
+
+
+
+
+
+Folder organisation:
+========================================================================
+data
+    contains the patches and their labels, as well as the numpy array created using LBP, but those are replaced every time we try different parameters
+models_Supervised
+    contains the created models, this is emptied every time we try to use different parameters
+pyThings
+    this is the main folder, where every useful piece of code is, as well as the results
+tools
+    this is where additional tools are put when needed, though most are meant to be removed at some point.
+
+
+
+
+
+Method explanation:
+=============================================================================================================================
+LBP:
+    To compute the LBP image of a patch, you need for each pixel, information about the nearby pixels.
+    for each pixel, you take a look at the pixels around it and according to if they are brighter, or dimmer than the current pixel,
+    you remember them as ones, or zeros. You concatenate those values and you get a binary string, one for each pixel.
+
+105  254  171           0 1 1
+ 95 [164]  28   --->    0   0   --->    01101010           For the pixel with value 164, the LBP will be 01101010
+185  142  210           1 0 1
+
+    You observe that we need the image to be grayscale which is our case, OR to compute three LBPs for each pixel, one for each channel
+    Note that there are some parameters to this LBP, there, we used a radius of 1 and 8 points, we could have used a radius of 2 and 8 points,
+    or a radius of 2 and 16 points along the circle. Those are parameters that you will be able to tune in the following programs.
+    Do also realize that the size of the patch is also a parameter, that is why one of the parameter is called resize_size, it harmonizes all
+    patches in case some of them are of a different size and can even crop the image in case you just want to go for patches of 50x50 pixels for example,
+    instead of the default 150x150 pixels.
+
+Histograms:
+    Now that you got a LBP image of your beginning image, you will place each string pattern in a histogram to access their frequency.
+    Basically, we really just store the frequency in the image of each possible string.
+    This is what will be used for model training and evaluation !
+
+    This is the most basic histogram, but there are a few more options that modify the information stored:
+    First, there is the number of bins. This is the number of classes that the histogram stores. The histogram i have described has one bin for each
+    possible string, but this varies depending on the number of points used for the LBP calculation ! For 8 points, there is 2^8 = 256 different strings,
+    but already for 16 points, there is way to many possible strings, 2^16 = 65536. To keep less information, which isn't always a bad thing in AI,
+    we can reduce those bins, to say 64 or 10 categories. As a fact, results with more than 64 bins rarely shown to be that good.
+
+    One last important parameter is the method used to sort the different LBP strings. The default one is called... "default". It treats
+    every different string as a... different string.
+    A pretty good one is "ror" which makes the strings invariants by rotation. This is pretty natural for something like the ground, where
+    up, down, left and right shouldn't really be discriminated. For example, our string 01101010 will be put in the same category as
+    11010100, and 10100110. The number of categories for this is reduced to 36, which means putting the number of bins above will have
+    unaccounted for behaviour. But you can still crank it down to 10 bins if you wish for example.
+    Another one i used is uniform, which only classify strings with less than 3 switches between 0 and 1, rotation invariant. Basically all string
+    that are 00000111 are distinguished by their numbers of 0 and 1s, while all strings that transition more than twice like 10100000 will be put
+    in the same basket. This makes for a total of 10 different classes, 00000000, 00000001, 00000011, 00000111, 00001111, 00011111, 00111111, 01111111
+    , 11111111 and Non-uniform results. This method also proved to work pretty well.
+
+Additional ideas:
+    The natural process is to take a patch resize it to "resize_size", compute the LBP for "n_points" number of points taken in a radius of size "radius",
+    use the "method" method to get the frequency of each string and classify them into "number_of_bins" categories.
+
+    A really cool thing about LBP is its robustness to lighting changes but something that is lost is coloration. Things like grass are so easy
+    to identify because of them color, this is frustrating. Because of this, i tried computing an LBP for each three channels, Red Blue Green.
+    It turns out that the results where absolute garbage, so i came back to a previous version, even though you can probably find it if you search in
+    my code, hidden behind a "if False:"...
+    A better way to do this, as i got the idea long after, would be to calculate the color proportions. That makes for three numbers that are concatenated
+    to the end of every histogram, being pretty light to compute and pretty efficient, as it turned out. I did not do it despite looking pretty
+    deeply into it, but you could also turn the colors to the HSL color space, then only keep the "hue" part, which would give information about the
+    color but not about its lightness and saturation. This could be pretty cool and so easy to implement as there is a function in opencv that permits
+    you to take an image and turn it into another color space, as you would do to turn BGR into RGB but with HSL.
+    Note that you have to manually change the code by commenting a line if you don't want that, i didn't pass it as an option because all previous
+    results weren't taking it as such, and also because i didn't ever see a decrease in score when using it, so i want it always on.
+
+    A parameter that is indeed an option, and the last one actually, is "sub_images_number", default value at 1, which doesn't change nothing. This option
+    tells the program to cut the image into a number of sub images, compute the histogram for every sub image, then concatenate them. This may preserve a
+    little structure in the image, and despite it not being relevant when dealing with ground types, i figured it could help in images with a bit of
+    grass on a lot of dirt, so that it would learn that if 8 histograms are classified as dirt, then the image should too.  
+    This proved to be not that useful, but still randomly gave some great results sometimes, for reasons outside my reach.
+    Do mind that the value you input is the squared root of the number of sub images you will get, as the image is a square, so i would not ever advertise
+    using a greater value than 3 for 150 sized images and 5 for 50. Just be prepared to endure the computation time.
+
+    I also tried to concatenate the histogram made from an LBP of parameters 1-8 with one of parameters 2-8 which did work but only so much, so it is
+    not currently on.
+
+    Also tried using hog features and radial histogram features really quickly, it worked a bit and i think it can be great with more careful tuning.
+    You just have to carefuly balance efficiency/time of calculation.
+
+
+
+
+
+Data preparation:
+======================================================================
+For each dataset:
+    The images need to be in a single folder, with their name starting with numbers of a fixed length, so padded with zeros if shorter.
+    Example with numbers of length 5: 12564, 00128, 00000.
+    The size of what is after that number should be constant for each image so that they can be removed and their number accessed in the data manipulation
+    part. Note that the size can be different between different datasets.
+
+    The data labelling files should look like that:
+
+00000-01214:5
+01221-03798:1
+03799-06014:5
+06015-08147:2
+08155-10287:4
+10291-12595:3
+
+    That is, [beginning of the interval]-[end of the interval]:[label of the images in this interval] and i don't think the padding is important in this file,
+    but it does make it coherent with the images names.
+    Using intervals is a deliberate choice made because i felt it was so much easier to label patches, as they are generaly grouped by type
+    as the robot takes multiple images each second and only patches of where it is on. You can put the intervals in any order, this doesn't
+    matter, and you can also put multiple intervals with the same label.
+    If there are missing images in an interval, no problems ! So if you have to remove some images after having numbered them, you do not
+    need to re-number them.
+
+
+
+
+
+Current Usage:
+==============================================================
+Currently, classes are used as follows:
+
+1 - dirt
+2 - grass
+3 - leaves
+4 - gravel
+5 - sand
+6 - asphalt
+
+For the datasets, i am using two datasets that are from a single set of images.
+    This original set of images was recorded in HD1080 with a zed2 camera and consists of less than 10 rosbags from which the images have been extracted and 
+    put together, enumerated one bag after the other. This is from way before i came in and that is the only thing i can tell you about it.
+
+    set_2 is the set i made. For every image of the original images, i took a single patch of 150x150 pixels in the middle-down part of the screen. I made it
+    a bit random to get around overfitting problems by picking in a region not exactly middle-down and giving a liberty of 3x150 = 450 pixels in width and
+    2x150 = 300 pixels in height. A random part of this region is chosen and the 150x150 patch is extracted.
+    set_2 is associated with set_2_Labels.txt in sets_Details/
+    This is its labels, currently:
+
+00000-00626:5
+00627-02054:1
+02055-03296:3
+03297-04398:2
+04399-05576:4
+05577-06798:6
+
+    There is also set_11 which probably dates from the same time as when the images came from. It contains patches collected using an old, not working algorithm
+    that took way to many patches in the sky, that i had to delete by hand... That explains the whole thing about not considering holes in the reading
+    of the intervals for a fact. Those patches vary in size, and most aren't even 150 pixels in height. This explains why i created:
+
+    set_1, which is just set_11 but only the images that were at least 150x150 pixels in size, resized to that. I fought it would give better results but
+    guess what ? it didn't...
+
+    set_12 is a variation of set_11, the opposite of set_1, to see if THAT would be better or worst. Well it works pretty much as well as set_11, for reasons
+    i can't grasp.
+
+    So the numerotation is designed to mean sets 1 and 2 are important, and set 11 and 12 are variation of set 1.
+    Even if historically this isn't how they came to be, it was always the spirit.
+    All three of them uses the set_1_Labels.txt (or set_11_Labels.txt, but they are the exact same) in sets_Details/ which is:
+
+00000-01214:5
+01221-03798:1
+03799-06014:3
+06015-08147:2
+08155-10287:4
+10291-12595:6
+
+After having used create_1array.py, the processed .npy data is stored in "processed_Data/", still in data/
+
+I generally use set_2 for model creation, as it is a big better quality than the others, and then test the models on set_1 or set_11.
+
+
+
+
+
+Details:
+=====================================================================================
+pyThings is the main folder, it contains everything you need to read previous results and launch tests. Let us go through each file one by one.
+
+whole_lotta_process.sh
+    Usage:
+        When you want to test multiple new sets of parameters.
+    Goal:
+        If you want to launch a bunch of tests, you can just write it in there, and launch this script !
+    Warning:
+        At the end of a test, a confusion matrix is show to the user. In case you want to launch a bunch of tests then go away from the computer and read
+        the results later, you will have to put to False the matrix showing block in Test_all.py so that the program doesn't need you to manually close
+        the graphic every instance of a test.
+    Variables:
+        None other than the one you pass in arguments to process.sh, so see this section instead for the list and the order, and see 
+        the METHOD EXPLANATION section for a detailed explanation.
+
+process.sh
+    Usage:
+        Shouldn't really be used, you call this inside whole_lotta_process.sh
+    Goal:
+        Launches a single test.
+    Variables:
+        Those are the variables that are passed for the data creation to create_1array.py, this program just takes them and send them as such
+            --resize_size $1 --radius $2 --n_points $3 --number_of_bins $4 --sub_images_number $5 --method $6
+        they are all related to LBPs and are detailed in the METHOD EXPLANATION section.
+
+create_1array.py
+    Usage:
+        If you need datasets that can be inputted in the model creation step.
+    Goal:
+        This is to prepare the data, take patches, computes the LBP image for each patch, then compute the histogram for each one of them, and finally 
+        concatenate them along with the corresponding labels to prepare them for the next step.
+    Arguments:
+        Those along with their default values in "":
+            --resize_size "150" --radius "1" --n_points "8" --number_of_bins "36" --sub_images_number "1" --method "ror"
+        The different choices for method are ["default", "ror", "uniform", "nri_uniform", "var"] even if i have never used nri_uniform and var.
+    Variables:
+        option_set is the big variable. As the program generally receives two sets of data to prepare, option_set contains the first set and the second,
+        totally dissociated, to permit changing them really easily. It is already detailed in the program, but the variables for an element is
+        currently displayed on three lines, one for information about the input, one for information about the output, and one for anything else.
+        In order: 
+        LINE 1
+            I - Input directory, in which the images are.   II - Input label file, details below.    III - Size of the suffix to remove, details below.
+                
+                The input label file should follow the format explained in the Data preparation tab.
+                The size of the suffix to be removed from the end of the images names does also reference the Data preparation tab, where i said
+                that the size of each image names within a dataset should be of the same length. This is the size of that length + the extension length,
+                minus the size of the numbers, so generally -5.
+                For example if your images are like "01526_patches.png", the option shall be 12, because there are 12 characters to remove, being
+                the characters "g n p . s e h c t a p _". For 00854.png, this option shall be 4, with "g n p .".    
+
+        LINE 2
+            I - Path + prefix of the output name.   II - Main part of the name of the concatenated histograms.
+                III - Main part of the name of the concatenated labels.     IV - Suffix + extension of the output name.
+                
+                The outputted numpy arrays will be named as such: prefix + middle + suffix. This is done so that the names are pretty similar and really
+                easy to look in the file system. Currently for me, this is "../data/processed_Data/set_[set number]", "_Data", "_Labels", ".npy"
+                of course you need to replace [set number] by its number, but it is really to do and not messy at all.
+
+        LINE 3
+            I - Nothing actually, this isn't used, but if you want, this is already organised :D
+
+Make_all.py
+    Usage:
+        After having prepared data.
+    Goal:
+        Create the models from the processed data.
+    Functioning:
+        This just takes one of the processed data sets and uses it to create models, i use SVMs with multiples C values and kernels, which you can see
+        the meaning on the internet, also uses LogReg algorithms, with multiples maximum numbers of iterations, which you can also check
+        on the internet, and finally KNN algorithms, with different numbers of neightbours.
+        Do note i checked quite a few parameters and reduced it to the only one that ever gave good results, that is why i don't use linear kernels for
+        example or not a wider range of parameters value, but you are free to try them out on your own.
+        All supervised models have the option of balancing the classes on, which deals with differences in the number of images in a class.
+        Do also mind that some parameters don't upgrade the scores, but they make them more meaningful, like the class balancing one for example,
+        having better results without them just means the classes that are well classed are overrepresented in numbers, so this isn't meaningful to deal with.
+    Variables:
+        Same as create_1array.py, this is really well explained in the program, but i will still break it down here:
+        Opt = ["../data/processed_Data/set_11_", "Data" , "Labels",   ".npy",    "../models_Supervised/"] is what i used, as explained
+        in current usage.
+        There is the classic prefix, middle part for histograms data, middle part for associated labels, suffix
+        Then, finally, the folder in which you wish to save the models.
+        The commented lines make it faster to change between setups, but are irrelevant in current time, just existing as templates.
+
+Test_all.py
+    Usage:
+        After having prepared the data AND created the models.
+    Goal:
+        Test the models on another set, to not get induced in error by overfitting. Find the best model for the current data, show its confusion
+        matrix on screen, and save it in a file, real_results.txt
+    Functioning:
+        Iterates through all models, prints their results and finally find the best one, compute its confusion matrix and save it as well as the model used.
+    Variables:
+        Easy enough if you got the previous two,
+        Opt = ["../data/processed_Data/set_2_", "Data" , "Labels",   ".npy",    "../models_Supervised/"]
+        The prefix, middle for data, middle for labels, suffix for the second set, and then the location of the models.
+        
+real_results.txt
+    Usage:
+        Check results after a test batch
+    Goal:
+        Stores results with confusion matrix and parameters, also has a few landmarks when new things are experimented without them being written
+        directly in the parameters.
+
+find_best.py
+    Usage:
+        When you want to check the best parameters.
+    Goal:
+        Using this will go through real_results.txt, send you the best results ever and the line at which to find them, so you can check if they have
+        unwritten option (they do)

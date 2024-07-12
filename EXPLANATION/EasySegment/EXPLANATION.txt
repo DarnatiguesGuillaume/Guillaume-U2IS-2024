@@ -1,0 +1,108 @@
+About easySegment.py:
+
+    This is a python script meant to reduce the excruciating pain of poor interns that have to segment images by hand.
+This is a script that works in combinaiton with the renown segment-anything from Meta, you need the whole segment-anything to work, so cuda, torch,
+their custom packages from segment-anything and so on are required.
+There also is a requirements.txt file that makes you download Pillow, numpy and opencv, i don't know how restrictive those are about versions though,
+so don't worry if you have a different build.
+
+The goal of the program is to create masks from images:
+    You start with an image and some labels
+    You end up with a mask for every region corresponding to the same label in the image !
+
+
+
+
+
+    <===>    Functionalities
+=================================================================================================================================
+
+The program has a couple functionalities:
+    - Segmentation mode:
+        You can click on a point and it will highlight the mask that this point is a part of, as calculated by segment anything.
+        Clicking on an other point will add it to the prediction, that will now be based on multiple points.
+        
+        - Negative Input Mode
+            After ticking this option, clicking on another point will add it as a negative input, a point that is NOT in the mask. This also uses segment
+            anything way of creating masks. You can switch back to positive inputs by unticking this option.
+
+        - Single input mode:
+            If you want to reset the current mask, you can select this option.
+            Clicking on another point will highlight the region for the new point, forgetting about the old one.
+            Really useful if the prediction for one point is sufficient for your mask.
+    
+    - Brush mode
+        This lets you use a brush, to highlight a custom area, this doesn't delete the current mask.
+        - Brush size
+            Lets you change the size of the brush...
+        - Erase Mode
+            Lets you brush with an eraser.
+
+    - Select label
+        You can choose the label under which your mask will be saved, this only changes the name of the mask .npy file that you will save.
+    - Select image 
+        You can cycle through images, choosing one will display it, let you brush it if you want, but will not let you use the segmentation tools on it,
+            for that, you need to click the "Process Current Image" button first.
+    
+    - Save choice
+        You can save a mask in 1 of 10 spots made for this purpose, this does not save the mask outside of the program, be careful, it will be deleted
+            when closing it.
+        Together with fuse mode, this is essential for making more complex masks.
+    - Load choice
+        You can load one of those masks that you saved with "Save choice", the choice is between mask 0 and 9, plus the "last" option, which is in case
+        you just miss clicked on an image you just worked on before saving (i've been here).
+    - Fuse choice
+        Allows you to fuse the current mask with the one you select, from 0 to 9. 
+        - Negative fuse mode
+            This makes the selected mask negative, which means it will do the operation: current_mask - mask_selected.
+
+Additional Information:
+    - There is an ID that is increased every time you save a mask, and that is put in the name of the saved file, so that you can go back to a mask you 
+        already did if you forgot one part of it, without deleting the first one. To fuse the two, you will just need to do a "&" operation between the two.
+        This ID is lost when the program is closed or when you change to an other photo, then return on a previous one, so do rename the existing one
+        to save it from deletion in case you want to go back to it.
+
+
+
+CAUTION:
+    When your app starts, you need to hit "Process Current Image" so that segment anything finds the masks of the image. This is not done automatically
+        so that you can change images without waiting for the first image to be processed.
+    When you predict a mask, it deletes the current brush strokes, so if you need to combine both methods, first predict the masks, then complete with brush,
+        or if you aim for something more complicated, save the mask, create a new one, then fuse them.
+    In case of miss clicks, there is a "last" option if you scroll down in "load choice", which does load the very last mask. This might not give expected
+        results if you color multiple points using the brush tool.
+
+
+
+
+
+    <===> Variables
+===============================================================================================================================================
+
+The program needs:
+    - an input folder with images inside
+    - an output folder where the masks will be put in
+    - a .txt file with all the label names, one per line
+    - the SAM model path
+    - the SAM model version (s,l,h, for small, large and huge, depends on which one you downloaded)
+    - cuda or cpu or whatever you can put here, for the method of computing.
+
+
+
+Clearer explanations with examples:
+    The .txt file should look something like that:
+
+road_easy
+road_medium
+dust
+gravel_easy
+gravel_medium
+grass_easy
+grass_medium
+forest_dirt_easy
+forest_dirt_medium
+forest_leaves
+forest_leaves_branches
+forest_dirt_stones_branches
+
+    each line will correspond to one label
